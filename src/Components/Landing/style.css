@@ -1,0 +1,62 @@
+/* Improved card styles */
+.price-card {
+    margin-top: 6vh;
+    width: 100%; /* Makes the card responsive */
+    max-width: 220px;
+    border-radius: 12px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* margin-bottom: 20px; */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0; /* Subtle border */
+    text-align: center;
+  }
+  
+  /* Card body styling */
+  .price-card .card-body {
+    font-size: 1rem;
+    padding: 15px;
+    color: #333;
+  }
+  
+  .price-card .card-body strong {
+    font-size: 1.2rem; /* Bold text size */
+    color: #555;
+    display: block;
+    margin-top: 10px; /* Add space between the icon and text */
+  }
+  
+  /* Icon styling */
+  .text-center .react-icon {
+    color: #4CAF50; /* Green color for price icon */
+    font-size: 50px;
+  }
+  
+  /* Hover effect: Slight zoom and shadow increase */
+  .price-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Increase shadow */
+   
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .price-card {
+      width: 100%;
+      max-width: 180px; /* Smaller max-width for mobile devices */
+    }
+    .price-card .card-body {
+      font-size: 0.9rem; /* Smaller font size on mobile */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .price-card {
+      max-width: 150px; /* Even smaller for extra small devices */
+    }
+    .price-card .card-body {
+      font-size: 0.85rem; /* Adjust font size for better fit */
+    }
+  }
+  

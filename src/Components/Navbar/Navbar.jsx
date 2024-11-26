@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
 import { Link } from 'react-router-dom';
-import { FaHome, FaSearch, FaShoppingCart } from 'react-icons/fa'; // FontAwesome icons
+import { FaSearch } from 'react-icons/fa'; // FontAwesome icons
 
 const Navbar = () => {
   return (
@@ -36,3 +36,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+

@@ -69,3 +69,42 @@
     color: #f39c12;
   }
   
+
+  .search-container {
+    position: relative;
+  }
+  
+  .suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 10;
+    padding: 5px 0;
+  }
+  
+  .suggestion-item {
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .suggestion-item img {
+    margin-right: 10px;
+  }
+  
+  .suggestion-item span {
+    font-size: 14px;
+  }
+  

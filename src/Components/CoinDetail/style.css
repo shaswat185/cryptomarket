@@ -1,0 +1,53 @@
+.coin-detail-container {
+    /* max-width: 800px; */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .coin-detail-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .coin-detail-container img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+  }
+  
+  .coin-detail-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  .coin-detail-container strong {
+    font-weight: bold;
+  }
+  
+  .coin-detail-container p:nth-child(even) {
+    background-color: #f0f0f0;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 600px) {
+    .coin-detail-container {
+      padding: 15px;
+    }
+  
+    .coin-detail-container h1 {
+      font-size: 1.5rem;
+    }
+  
+    .coin-detail-container p {
+      font-size: 0.9rem;
+    }
+  }
+  

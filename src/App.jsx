@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Use Routes instead of Switch
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Use Routes instead of Switch
-import Navbar from './Components/Navbar/Navbar';
-import Landing from './Components/Landing/Landing';
-import List from './Components/List/CryptoList';
-import CoinDetail from './Components/CoinDetail/CoinDetails';  // The new page for coin details
 
+// Lazy loading components
+const CryptoHomePage = lazy(() => import('./Components/Homepage/CryptoHomePage'));
+const CoinDetailsPage = lazy(() => import('./Components/CoinDetailsPage/CoinDetailsPage'));
 
-
-function App() {
+const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<div><Landing/></div>} />
-        <Route path="/list" element={<div><List/></div>} />
-        <Route path="/coin/:coinId" element={<CoinDetail />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          {/* Define routes using "element" */}
+          <Route path="/" element={<CryptoHomePage />} />
+          <Route path="/coin/:coinId" element={<CoinDetailsPage />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
-}
+};
 
 export default App;

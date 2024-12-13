@@ -10,22 +10,21 @@ const CryptoHomePage = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchCoins = async () => {
-    setLoading(true);
     try {
-      const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets', {
-        params: {
-          vs_currency: 'usd',
-          order: 'market_cap_desc',
-          per_page: 10,
-        },
-      });
-      setCoins(response.data);
-      setFilteredCoins(response.data);
+      const response = await axios.get(
+        `https://api.allorigins.win/get?url=${encodeURIComponent(
+          'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=10'
+        )}`
+      );
+  
+      const data = JSON.parse(response.data.contents); // Parse the returned data
+      setCoins(data);
+      setFilteredCoins(data);
     } catch (error) {
       console.error('Error fetching coins:', error);
     }
-    setLoading(false);
   };
+  
 
   useEffect(() => {
     fetchCoins();
@@ -68,7 +67,7 @@ const CryptoHomePage = () => {
                   <img src={coin.image} alt={coin.name} className="coin-image" />
                   <div className="card-body">
                     <h3 className="coin-name">{coin.name}</h3>
-                    <p className="coin-price">Price: ₹{coin.current_price}</p>
+                    <p className="coin-price">Price: ₹{coin.current_price.toLocaleString()}</p>
                   </div>
                 </div>
               </Link>
